@@ -9,5 +9,5 @@ Colorization Project in the M.S Course
 * 1. Introduction
 * 2. Citation
 * 3. Models
-* 4. Experiments
+* 4. Datasets, Experiments
 * 5. Conclusion
