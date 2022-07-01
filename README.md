@@ -1,2 +1,2 @@
-# colorization_at_skku
+# Colorization at skku
 Colorization Project in M.S Course at skku
