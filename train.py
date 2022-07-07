@@ -69,12 +69,8 @@ def main(args):
         run = VAE_LAB_Trainer(args, method, True, criterion=args.loss)
     elif 'VQ' in args.net:
         run = VQ_Trainer(args, method, True, criterion=args.loss)
-    # elif 'WGAN' in args.net:
-        # run = WGAN_GP_Trainer(args, method, True, criterion=args.loss)
     elif 'pix2pixHD' in args.net:
         run = Pix2pixHD_Trainer(args, method, True, criterion=args.loss)
-    #elif 'pix2pixWGAN' in args.net:
-    #    run = Pix2pixHDWGAN_Trainer(args, method, True, criterion=args.loss)
     elif 'custom' in args.net:
         run = Pix2pixHDCustom_Trainer(args, method, True, criterion=args.loss)
     elif 'final' in args.net:
