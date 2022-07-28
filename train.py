@@ -61,14 +61,8 @@ def main(args):
             run = yTrainer3D(args, method, True, criterion=args.loss)
     elif 'berg' in args.net:
         run = bergTrainer(args, method, True, criterion=args.loss)
-    elif 'attention' in args.net:
-        run = MY_Trainer(args, method, True, criterion=args.loss)
     elif 'Lab' in args.net:
         run = Lab_Trainer(args, method, True, criterion=args.loss)
-    elif 'VAE' in args.net:
-        run = VAE_LAB_Trainer(args, method, True, criterion=args.loss)
-    elif 'VQ' in args.net:
-        run = VQ_Trainer(args, method, True, criterion=args.loss)
     elif 'pix2pixHD' in args.net:
         run = Pix2pixHD_Trainer(args, method, True, criterion=args.loss)
     elif 'custom' in args.net:
