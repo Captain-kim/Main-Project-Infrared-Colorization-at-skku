@@ -21,3 +21,9 @@ By separating the Lab image, the L and ab are fused independently. The colorized
 
 ## Experiments
 In VSIAD dataset, separated into two parts, i.e., paired VNIR images of daytime and NIR images of night-time. We split 20,000 image pairs into train, validation and test as 3:1:1. We select a batch size of 40 and randomly crop 256 × 256 patches from 640 × 480 image of full resolution. The network is trained with a NVIDIA Tesla V100 and for 100,000 iterations. All of parameters are optimized by the Adam optimizer using initial learning late = 1e^-4, $\Beta$_1 = 0.9, $\Beta$_2 = 0.999, $\Epsilon$ = 1e^-8.
+|Method|PSNR|SSIM|LPIPS|
+|------|------|------|
+|pix2pix|14.485|0.599|0.166|
+|pix2pixHD|19.654|0.641|0.287|
+|baseline|19.690|0.698|0.248|
+|Proposed Method|20.479|0.688|0.255|
