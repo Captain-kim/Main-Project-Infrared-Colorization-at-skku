@@ -12,3 +12,9 @@ In the conventional near-infrared (NIR) image colorization methods, color consis
 ## Baseline
 ![Baseline structure](./images/Baseline_structure.jpg)
 G. Wu proposed State Synchronization Networks (SSN) for NIR image colorization in 2020 ECCV, ["Learn to Recover Visible Color for Video Surveillance in a Day"](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460477.pdf). This structure uses one encoder and two parallel decoder and State Synchronization Module (SSM). encoder follows [ResNet](https://arxiv.org/abs/1512.03385?context=cs) using several residual blocks and two decoders have the same structure except for the final prediction layer. In addition, the deconvolutional layer and skip connection used in [U-Net](https://arxiv.org/abs/1505.04597) are applied to connect them with the same height and width. 
+
+## Proposed Method
+We proposed a method for enhancing the edge, texture and color consistency. This structure shows a proposed method for edge enhancement and a feature fusion module. It is composed a three identical baseline structures and feature fusion modules.
+First, we extract the feature maps from input image and edge. Second, the previously output colorized images extracted are fused using the feature fusion module.
+Feature fusion module utilizes [MS-CAM](https://arxiv.org/abs/2009.14082) twice. 
+By separating the Lab image, the L and ab are fused independently. The colorized images from input and edges are different, but they are similar to each other. When two images are concatenated in channels, information gets mixed up and leads to poor performance. Since the L includes brightness and the ab includes chrominance, if different components are used as it is, it is also mixed without being refined. In order to prevent this, the L and ab are separated and independently purified. Finally, another baseline structure takes a fused colorized images and provides the outputs.
